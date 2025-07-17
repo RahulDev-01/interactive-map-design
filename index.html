@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Map Design</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="icon" type="image/png" href="./location-map-2956.png">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Courier New', Courier, monospace;
+      /* Responsive font size */
+      font-size: 1rem;
+      background: #f7f7f7;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 1em 0 0.5em 0;
+      font-size: 1.5em;
+      word-break: break-word;
+    }
+
+    #map {
+      flex: 1 1 auto;
+      width: 100vw;
+      height: 50vh;
+      max-width: 100%;
+      min-height: 300px;
+      border: 2px solid black;
+    }
+
+    @media (max-width: 600px) {
+      #map {
+        height: 40vh;
+        min-height: 200px;
+      }
+      h1 {
+        font-size: 1.1em;
+        padding: 0 10px;
+      }
+    }
+
+    .leaflet-popup-content {
+      font-size: 1em;
+    }
+
+    .leaflet-marker-icon {
+      border-radius: 50%;
+      border: 2px solid #4d5bf9;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .leaflet-marker-icon:hover {
+      transform: scale(1.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Map With HTML,CSS and JavaScript</h1>
+  <div id="map"></div>
+  <div>
+    <h1 style="font-size:1em;margin-top:2em;">&copy; Copyright 2025 | Created By S.Rahul</h1>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([28.6139 , 77.2088], 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Location markers
+    L.marker([28.6139 , 77.2088]).addTo(map)
+      .bindPopup('<b>Delhi</b><br>Capital city of India.');
+
+    L.marker([40.7128, -74.0060]).addTo(map)
+      .bindPopup('<b>New York</b><br>The city that never sleeps.');
+
+    L.marker([18.9582, 72.8321]).addTo(map)
+      .bindPopup('<b>Mumbai</b><br>Mumbai (formerly called Bombay) is a densely populated city on India\'s west coast.');
+
+    L.marker([22.5744, 88.3629]).addTo(map)
+      .bindPopup('<b>Kolkata</b><br>Kolkata is located in West Bengal, India.');
+
+    L.marker([12.9629, 77.5775]).addTo(map)
+      .bindPopup('<b>Bengaluru</b><br>Bengaluru (also called Bangalore) is the capital of Karnataka and the center of India\'s high-tech industry.');
+
+    L.control.zoom().addTo(map);
+  </script>
+</body>
+</html>
