@@ -1,4 +1,4 @@
-# Interactive Map with Satellite View 
+# Interactive Map 
 
 ## Overview
 
