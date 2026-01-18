@@ -1,4 +1,4 @@
-# Interactive Map 
+# Interactive Map 🗺️ 
 
 ## Overview
 
