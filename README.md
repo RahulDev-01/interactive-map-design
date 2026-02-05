@@ -19,7 +19,6 @@ This project is a responsive web application displaying an interactive map with 
 
 1. **Clone or Download the Repository**
 
-
 2. **Add Project Files**
 
 - Place the HTML file from this project into your directory.
